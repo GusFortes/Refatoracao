@@ -20,6 +20,8 @@ class ClienteTest {
 		Cliente c = new ClienteSocio("Juvenal", "02447967030", 22, "Masculino", 1);
 		assertEquals(1, ((ClienteSocio) c).getNumeroSocio());
 	}
+	
+	
 
 	
 }
