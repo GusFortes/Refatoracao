@@ -1,11 +1,11 @@
-package testes;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import bar.Cliente;
-import bar.ClienteSocio;
+import persistence.Cliente;
+import persistence.ClienteSocio;
 
 class ClienteTest {
 

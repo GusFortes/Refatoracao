@@ -1,4 +1,4 @@
-package bar;
+package uinterface;
 
 public class App {
 

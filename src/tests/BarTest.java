@@ -1,4 +1,4 @@
-package testes;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,9 +7,9 @@ import java.lang.reflect.Executable;
 
 import org.junit.jupiter.api.Test;
 
-import bar.Cliente;
-import bar.ClienteSocio;
-import bar.Bar;
+import business.Bar;
+import persistence.Cliente;
+import persistence.ClienteSocio;
 
 class BarTest {
 

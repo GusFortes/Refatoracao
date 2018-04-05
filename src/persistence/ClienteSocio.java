@@ -1,4 +1,4 @@
-package bar;
+package persistence;
 
 public class ClienteSocio extends Cliente {
 

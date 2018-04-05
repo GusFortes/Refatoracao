@@ -1,7 +1,10 @@
-package bar;
+package business;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import persistence.Cliente;
+import persistence.ClienteSocio;
 
 public class Bar {
 	// Cliente sócio: super() e número de sócio
