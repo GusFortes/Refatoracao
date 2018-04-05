@@ -1,5 +1,9 @@
 package business;
 
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,10 +16,12 @@ public class Bar {
 	// quantidade, distribuição percentual por genero
 	// diferenciação de status de sócio. Para sair, o cliente informa o CPF.
 	Set<Cliente> clientesNoBar;
+	Set<Cliente> clientesDoDia;
 
 	public Bar() {
 		super();
 		this.clientesNoBar = new HashSet<>();
+		this.clientesDoDia = new HashSet<>();
 	}
 
 	// Retorna os clientes no bar
@@ -30,6 +36,7 @@ public class Bar {
 	// Metodo para registrar um cliente
 	public void cadastroCliente(Cliente c) {
 		clientesNoBar.add(c);
+		clientesDoDia.add(c);
 	}
 
 	// Retorna numero de pessoas no bar
@@ -80,6 +87,16 @@ public class Bar {
 			throw new IllegalArgumentException("O cliente não está no bar.");
 
 		}
+	}
+
+	// Fecha bar e coloca no arquivo texto todos os clientes do dia
+	public void fechaBar() throws IOException {
+		BufferedWriter  out = new BufferedWriter (new FileWriter("src/persistence/clientesQueEstiveramNoBar.txt"));
+		for (Cliente c : clientesDoDia) {
+			out.write(c.toString());
+			out.newLine();
+		}
+	out.close();
 	}
 
 }
