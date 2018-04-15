@@ -1,0 +1,4 @@
+Cliente [nome=Alberto, cpf=024.659.652-30, idade=21, genero=Masculino]
+Cliente [nome=Obama, cpf=024.659.652-30, idade=21, genero=Masculino]
+Cliente [nome=Carlos, cpf=024.659.652-30, idade=21, genero=Masculino]
+Cliente [nome=Lucas, cpf=024.659.652-30, idade=21, genero=Masculino]

@@ -35,8 +35,18 @@ public class Bar {
 
 	// Metodo para registrar um cliente
 	public void cadastroCliente(Cliente c) {
-		clientesNoBar.add(c);
-		clientesDoDia.add(c);
+		int i = 0;
+		for (Cliente cliente : clientesNoBar) {
+			if (cliente.getCpf() == c.getCpf()) {
+				i++;
+			}
+		}
+		if (i == 0) {
+			clientesNoBar.add(c);
+			clientesDoDia.add(c);
+		} else {
+			throw new IllegalArgumentException("Pessoa ja esta no bar!");
+		}
 	}
 
 	// Retorna numero de pessoas no bar
@@ -75,7 +85,7 @@ public class Bar {
 				qntd++;
 			}
 		}
-		return qntd + " clientes são sócios no bar e " + (clientesNoBar.size() - qntd) + " não são sócios";
+		return qntd + " clientes sao socios no bar e " + (clientesNoBar.size() - qntd) + " nao sao socios";
 
 	}
 
@@ -91,12 +101,12 @@ public class Bar {
 
 	// Fecha bar e coloca no arquivo texto todos os clientes do dia
 	public void fechaBar() throws IOException {
-		BufferedWriter  out = new BufferedWriter (new FileWriter("src/persistence/clientesQueEstiveramNoBar.txt"));
+		BufferedWriter out = new BufferedWriter(new FileWriter("src/persistence/clientesQueEstiveramNoBar.txt"));
 		for (Cliente c : clientesDoDia) {
 			out.write(c.toString());
 			out.newLine();
 		}
-	out.close();
+		out.close();
 	}
 
 }
