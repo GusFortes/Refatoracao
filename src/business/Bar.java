@@ -16,7 +16,7 @@ public class Bar {
 	// quantidade, distribuição percentual por genero
 	// diferenciação de status de sócio. Para sair, o cliente informa o CPF.
 	Set<Cliente> clientesNoBar;
-	Set<Cliente> clientesDoDia;
+	public Set<Cliente> clientesDoDia;
 
 	public Bar() {
 		super();
@@ -66,6 +66,7 @@ public class Bar {
 
 	// Retorna distribuição por gênero %
 	public String retornaDistribuicaoGenero() {
+		if(qntdDePessoas() != 0) {
 		int homens = 0;
 
 		for (Cliente cliente : clientesNoBar) {
@@ -75,6 +76,10 @@ public class Bar {
 		}
 		return "Quantidade de homens: " + (homens * 100) / clientesNoBar.size() + "%" + "\nQuantidade de mulheres: "
 				+ ((clientesNoBar.size() - homens) * 100) / clientesNoBar.size() + "%";
+		} else {
+			return "Nao existem clientes no bar.";
+		}
+		
 	}
 
 	// Retorna quantidade de socios
